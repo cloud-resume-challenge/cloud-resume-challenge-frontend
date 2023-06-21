@@ -1,3 +1,7 @@
+data "google_storage_bucket" "existing" {
+  name = var.bucket_name
+}
+
 resource "google_storage_bucket_object" "object" {
   name   = "index.html"
   bucket = var.bucket_name
