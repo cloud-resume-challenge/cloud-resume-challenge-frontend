@@ -9,3 +9,12 @@ module "storage_bucket_objects" {
   bucket_name = var.bucket_name
 }
 
+terraform {
+  cloud {
+    organization = var.organization
+
+    workspaces {
+      name = var.workspace
+    }
+  }
+}

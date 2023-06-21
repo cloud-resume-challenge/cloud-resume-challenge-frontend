@@ -10,3 +10,11 @@ variable "region" {
   description = "The region to deploy to"
   type        = string
 }
+variable "organization" {
+  description = "The organization ID to deploy to"
+  type        = string
+}
+variable "workspace" {
+  description = "The workspace to deploy to"
+  type        = string
+}
