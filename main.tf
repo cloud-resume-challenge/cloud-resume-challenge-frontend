@@ -11,10 +11,10 @@ module "storage_bucket_objects" {
 
 terraform {
   cloud {
-    organization = var.organization
+    organization = "austinbrees"
 
     workspaces {
-      name = var.workspace
+      name = "ahb-cloud-resume-challenge"
     }
   }
 }
