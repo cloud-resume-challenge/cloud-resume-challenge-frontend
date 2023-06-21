@@ -1,7 +1,7 @@
 provider "google" {
   project     = var.project
   region      = var.region
-  credentials = file("credentials.json")
+  credentials = jsondecode(base64decode(var.credentials))
 }
 
 module "storage_bucket_objects" {

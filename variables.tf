@@ -18,3 +18,7 @@ variable "workspace" {
   description = "The workspace to deploy to"
   type        = string
 }
+variable "credentials" {
+  description = "The Google Cloud credentials in JSON format"
+}
+
