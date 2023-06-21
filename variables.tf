@@ -18,4 +18,6 @@ variable "workspace" {
   description = "The workspace to deploy to"
   type        = string
 }
-
+variable "credentials" {
+  description = "The credentials to deploy with"
+}
