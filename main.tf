@@ -9,9 +9,10 @@ module "storage_bucket_objects" {
   bucket_name = var.bucket_name
 }
 
+# changes
 terraform {
   cloud {
-    organization = "austinbrees"
+    organization = "austinbrees" 
 
     workspaces {
       name = "ahb-cloud-resume-challenge"
