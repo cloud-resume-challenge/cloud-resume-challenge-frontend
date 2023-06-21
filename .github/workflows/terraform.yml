@@ -35,7 +35,8 @@ jobs:
 
       # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -backend-config="bucket_name=${{ secrets.bucket_name }}" -backend-config="project=${{ secrets.project }}" -backend-config="region=${{ secrets.region }}" -backend-config="organization=${{ secrets.organization }}" -backend-config="workspace=${{ secrets.workspace }}"
+
 
       # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Format
@@ -43,13 +44,13 @@ jobs:
 
       # Generates an execution plan for Terraform
       - name: Terraform Plan
-        run: terraform plan -input=false
+        run: terraform plan -input=false -var "bucket_name=${{ secrets.bucket_name }}" -var "project=${{ secrets.project }}" -var "region=${{ secrets.region }}" -var "organization=${{ secrets.organization }}" -var "workspace=${{ secrets.workspace }}"
+
 
       # Execute Terraform apply on push events to the "main" branch and pull requests
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve -input=false -var "bucket_name=${{ secrets.bucket_name }}" -var "project=${{ secrets.project }}" -var "region=${{ secrets.region }}" -var "organization=${{ secrets.organization }}" -var "workspace=${{ secrets.workspace }}"
-    
         env:
           TF_VAR_bucket_name: ${{ secrets.bucket_name }}
           TF_VAR_project: ${{ secrets.project }}
