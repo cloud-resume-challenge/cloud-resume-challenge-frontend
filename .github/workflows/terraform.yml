@@ -48,11 +48,11 @@ jobs:
       # Execute Terraform apply on push events to the "main" branch and pull requests
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -input=false -var "bucket_name=${{ secrets.TF_VAR_bucket_name }}" -var "project=${{ secrets.TF_VAR_project }}" -var "region=${{ secrets.TF_VAR_region }}" -var "organization=${{ secrets.TF_VAR_organization }}" -var "workspace=${{ secrets.TF_VAR_workspace }}"
-      
+        run: terraform apply -auto-approve -input=false -var "bucket_name=${{ secrets.bucket_name }}" -var "project=${{ secrets.project }}" -var "region=${{ secrets.region }}" -var "organization=${{ secrets.organization }}" -var "workspace=${{ secrets.workspace }}"
+    
         env:
-          TF_VAR_bucket_name: ${{ secrets.TF_VAR_bucket_name }}
-          TF_VAR_project: ${{ secrets.TF_VAR_project }}
-          TF_VAR_region: ${{ secrets.TF_VAR_region }}
-          TF_VAR_organization: ${{ secrets.TF_VAR_organization }}
-          TF_VAR_workspace: ${{ secrets.TF_VAR_workspace }}
+          TF_VAR_bucket_name: ${{ secrets.bucket_name }}
+          TF_VAR_project: ${{ secrets.project }}
+          TF_VAR_region: ${{ secrets.region }}
+          TF_VAR_organization: ${{ secrets.organization }}
+          TF_VAR_workspace: ${{ secrets.workspace }}
