@@ -9,6 +9,8 @@ module "storage_bucket_objects" {
   bucket_name = var.bucket_name
 }
 
+
+
 # changes
 terraform {
   cloud {
