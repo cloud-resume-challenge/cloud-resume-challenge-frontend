@@ -12,7 +12,7 @@ module "storage_bucket_objects" {
 # changes
 terraform {
   cloud {
-    organization = "austinbrees" 
+    organization = "austinbrees"
 
     workspaces {
       name = "ahb-cloud-resume-challenge"
