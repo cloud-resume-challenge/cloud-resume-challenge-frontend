@@ -1,4 +1,4 @@
 # Static Website for Cloud Resume Challenge 
 
-## Project setup
+[Go take a look at the site](https://austinbrees.com)
 
